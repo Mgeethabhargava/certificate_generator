@@ -1,0 +1,134 @@
+<head>
+<style type="text/css">
+  #element1 {float:left;margin-left:400px;  margin-top: 150px; padding: 14px;}
+  #element2 {float:center-right;}
+  #element3 {float:right;}
+ * {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  width: 1528px;
+  position: fixed;    
+  background-color: #2196F3;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .login-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width:120px;
+}
+
+.topnav .login-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background-color: #555;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background-color: #2196F3;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+</style>
+</head>
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- The sidebar -->
+  <div class="topnav" style="background-color:#2196F3">
+      <a class="active" href="#" style="color:white;">BONAFIDE CERTIFICATE GENERATOR</a>  
+	<div class="login-container">
+        <li><a href="{{ url_for('logout')}}">logout</a></li>
+	</div>
+  </div>    
+<!-- Page content -->
+<div class="content">      
+<form method = "Post" action="/certgen" align="center" style="padding-top: 100px;padding-bottom: : 100px;">
+<h1>Please Enter Your Details For Generation of Bonafide Certificate</h1>
+Full Name:<br>
+<input type="text" name="Fullname"><br><br>
+Admission No:<br>
+<input type="text" name="Admissionno"><br><br>
+Course Name:<br>
+<input type="text" name="GraduationDegree"><br><br>
+Year of Studying(Enter in Roman Formats):<br>
+<input type="text" name="YStudying"><br><br>    
+Specialization/Branch:<br>
+<input type="text" name="specialization"><br><br>    
+Joining Year(Only Enter year in digits):<br>
+<input type="text" name="jdate"><br><br>
+Course Duration(Enter Duration in digits):<br>
+<input type="text" name="cduration"><br><br>
+E-Mail ID:<br>
+<input type="text" name="emailid"><br><br>
+<input type="submit" value="Submit">
+</form>
+        {% with messages = get_flashed_messages() %}  
+                          {% if messages %}  
+                          {% for message in messages %}  
+                           <p>{{ message }}</p>  
+                          {% endfor %}  
+                          {% endif %}  
+                          {% endwith %}    
+    </div>
+
+</body>
