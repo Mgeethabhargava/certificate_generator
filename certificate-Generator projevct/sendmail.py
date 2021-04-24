@@ -9,7 +9,7 @@ def SendMail(ImgFileName,email,fullname):
     img_data = open(ImgFileName, 'rb').read()
     msg = MIMEMultipart()
     msg['Subject'] = 'Your Bonafide Certificate is Generated Successfully'
-    msg['From'] = 'scientistforresearch@gmail.com'
+    msg['From'] = 'enter your email'
     msg['To'] = email
 
     text = MIMEText("Dear "+fullname+" ,"+"\n\nYour Bonafide Certificate is Generated Successfully and Ready for Print")
@@ -21,6 +21,6 @@ def SendMail(ImgFileName,email,fullname):
     s.ehlo()
     s.starttls()
     s.ehlo()
-    s.login('scientistforresearch@gmail.com', 'Bgm@6018')
-    s.sendmail('scientistforresearch@gmail.com', email, msg.as_string())
+    s.login('sender email', ' sender password')
+    s.sendmail('sender email', email, msg.as_string())
     s.quit()

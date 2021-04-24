@@ -9,7 +9,7 @@ from sendmail import SendMail
 
 app = Flask(__name__)
 app.secret_key = 'Alexas'
-DOWNLOAD_FOLDER = r'G:\TEMPP\E\mca\complete_mca\certificate-Generator projevct\downlodds'
+DOWNLOAD_FOLDER = r'G:\certificate-Generator projevct\downlodds'
 app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 global msg 
 global con 

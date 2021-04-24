@@ -41,7 +41,7 @@ def certificategenerate(fullname,registeredno,CourseName,courseyear,specializati
 # save the edited image
     fullname = registeredno + ".jpg"
     print(fullname)
-    url = "G:/TEMPP/E/mca/complete_mca/certificate-Generator projevct/downlodds/"+fullname
+    url = "G:/certificate-Generator projevct/downlodds/"+fullname
     image.save(url)
     #optimize = fullname+"_____"+"optimize.png"
     #image.save('optimized.png', optimize=True, quality=20)
